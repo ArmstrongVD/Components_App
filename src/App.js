@@ -1,6 +1,6 @@
 function App(){
     return <div>
-        APP
+        APP 2
     </div>
 }
 
