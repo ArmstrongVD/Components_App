@@ -8,9 +8,7 @@ function DropdownPage() {
     setSelection(option);
   };
 
-
-
-const options = [
+  const options = [
     { label: "Select...", value: "Select..." },
     { label: "Red", value: "red" },
     { label: "Green", value: "green" },

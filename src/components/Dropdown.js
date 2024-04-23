@@ -9,19 +9,19 @@ function Dropdown({ options, value, onChange }) {
   const divEl = useRef();
 
   useEffect(() => {
-    const handler = (event)=> {
-      if(!divEl.current){
-        return
+    const handler = (event) => {
+      if (!divEl.current) {
+        return;
       }
-      if(!divEl.current.contains(event.targer)){
-        setIsOpen(false)
+      if (!divEl.current.contains(event.targer)) {
+        setIsOpen(false);
       }
-    }
-    document.addEventListener('click', handler, true);
-    return () => {
-      document.removeEventListener('click', handler)
     };
-  }, [])
+    document.addEventListener("click", handler, true);
+    return () => {
+      document.removeEventListener("click", handler);
+    };
+  }, []);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -30,8 +30,6 @@ function Dropdown({ options, value, onChange }) {
   const handleOptionClick = (option) => {
     setIsOpen(false);
     onChange(option);
-
-    console.log(option);
   };
 
   const renderedOptions = options.map((option) => {
